@@ -10,6 +10,12 @@ module.exports = function (app) {
       required: true,
       unique: true
     },
+    title: {
+      type: String
+    },
+    rating: {
+      type: Number
+    },
     createdAt: {
       type: Date,
       default: Date.now
