@@ -1,8 +1,8 @@
-// Initializes the `gig` service on path `/gig`
-const createService = require('feathers-nedb');
-const createModel = require('../../models/gig.model');
-const hooks = require('./gig.hooks');
-const filters = require('./gig.filters');
+// Initializes the `gigs` service on path `/gigs`
+const createService = require('feathers-mongoose');
+const createModel = require('../../models/gigs.model');
+const hooks = require('./gigs.hooks');
+const filters = require('./gigs.filters');
 
 module.exports = function () {
   const app = this;
@@ -10,16 +10,16 @@ module.exports = function () {
   const paginate = app.get('paginate');
 
   const options = {
-    name: 'gig',
+    name: 'gigs',
     Model,
     paginate
   };
 
   // Initialize our service with any options it requires
-  app.use('/gig', createService(options));
+  app.use('/gigs', createService(options));
 
   // Get our initialized service so that we can register hooks and filters
-  const service = app.service('gig');
+  const service = app.service('gigs');
 
   service.hooks(hooks);
 
