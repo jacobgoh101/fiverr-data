@@ -16,6 +16,9 @@ module.exports = function (app) {
     rating: {
       type: Number
     },
+    subcategory: {
+      type: String
+    },
     createdAt: {
       type: Date,
       default: Date.now
